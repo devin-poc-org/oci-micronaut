@@ -57,6 +57,30 @@
         <configuration>
           <configFile>aot-${packaging}.properties</configFile>
         </configuration>
+        <executions>
+          <execution>
+            <id>default-start-testresources-service</id>
+            <phase>none</phase>
+          </execution>
+          <execution>
+            <id>default-stop-testresources-service</id>
+            <phase>none</phase>
+          </execution>
+          <execution>
+            <id>start-testresources-service-integration</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>start-testresources-service</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>stop-testresources-service-integration</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>stop-testresources-service</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
