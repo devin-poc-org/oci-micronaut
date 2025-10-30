@@ -43,7 +43,7 @@ jobs:
         working-directory: src/${{ matrix.project-path }}
         run: |
           if [ -f "mvnw" ]; then
-              ./mvnw test --no-transfer-progress
+              ./mvnw verify --no-transfer-progress
           elif [ -f "gradlew" ]; then
               ./gradlew check --no-daemon --continue
           fi
